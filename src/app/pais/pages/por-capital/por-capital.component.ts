@@ -21,21 +21,21 @@ export class PorCapitalComponent {
   paises: Country[] = [];
 
   /// Constructor
-  constructor(private paisService: PaisService){}
+  constructor(private paisService: PaisService) { }
 
   /// Buscar method
-  buscar(termino: string){
-    
+  buscar(termino: string) {
+
     /// Re-init
     this.hayError = false;
     this.termino = termino;
 
     // Search at service
     this.paisService.buscarPorCapital(termino)
-      .subscribe( (paises) =>{
+      .subscribe((paises) => {
         console.log(paises);
         this.paises = paises;
-      }, (error) =>{
+      }, (error) => {
         this.hayError = true;
         this.paises = [];
       });
@@ -43,7 +43,7 @@ export class PorCapitalComponent {
 
 
   /// sugerencias
-  sugerencias(valor: string){
+  sugerencias(valor: string) {
     // TODO : crear sugerencias
     console.log('Holi');
   }
